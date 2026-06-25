@@ -8,7 +8,6 @@ soong_namespace {
         "hardware/mediatek",
         "hardware/mediatek/libaedv",
         "hardware/mediatek/libmtkperf_client",
-        "hardware/lineage/compat",
         "hardware/samsung",
     ],
 }
@@ -275,7 +274,7 @@ cc_prebuilt_library_shared {
                 "libgralloctypes_mtk",
                 "libcutils",
                 "libhardware",
-                "android.hardware.graphics.common-V5-ndk",
+                "android.hardware.graphics.common-V7-ndk",
                 "libdmabufheap",
                 "libz",
                 "libc++",
@@ -575,7 +574,7 @@ cc_prebuilt_library_shared {
                 "libdrm",
                 "libutils",
                 "libcutils",
-                "android.hardware.graphics.common-V6-ndk",
+                "android.hardware.graphics.common-V7-ndk",
                 "libgralloc_extra",
                 "libgralloc_metadata",
                 "libgralloctypes_mtk",
@@ -670,7 +669,7 @@ cc_prebuilt_library_shared {
                 "libmedia_helper",
                 "libladder",
                 "libprocessgroup",
-                "android.hardware.audio.effect-V2-ndk",
+                "android.hardware.audio.effect-V3-ndk",
                 "libfmq",
                 "libbase",
                 "libbluetooth_audio_session_aidl_mtk",
@@ -884,7 +883,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "arm.graphics-V5-ndk",
-                "android.hardware.graphics.common-V5-ndk",
+                "android.hardware.graphics.common-V7-ndk",
                 "libhidlbase",
                 "libdrm",
                 "android.hardware.graphics.mapper@4.0",
@@ -1631,6 +1630,7 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -1798,6 +1798,7 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -2196,6 +2197,30 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libSQLiteModule_VER_ALL",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libSQLiteModule_VER_ALL.so",
+            ],
+            shared_libs: [
+                "libdl",
+                "liblog",
+                "libm",
+                "libc",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libSemDataProps",
     owner: "samsung",
     strip: {
@@ -2504,6 +2529,7 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -2736,7 +2762,7 @@ cc_prebuilt_library_shared {
                 "libcomposer_ext",
                 "libbinder_ndk",
                 "android.frameworks.sensorservice-V1-ndk",
-                "android.hardware.sensors-V2-ndk",
+                "android.hardware.sensors-V3-ndk",
                 "libsensorndkbridge",
                 "libdrm",
                 "libc++",
@@ -3407,7 +3433,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libbluetooth_audio_session_aidl_mtk.so",
             ],
             shared_libs: [
-                "android.hardware.bluetooth.audio-V4-ndk",
+                "android.hardware.bluetooth.audio-V5-ndk",
                 "android.hardware.bluetooth.audio@2.0",
                 "android.hardware.bluetooth.audio@2.1",
                 "libbase",
@@ -4333,7 +4359,7 @@ cc_prebuilt_library_shared {
                 "libbinder_ndk",
                 "libmtkcam_stdutils",
                 "android.frameworks.sensorservice-V1-ndk",
-                "android.hardware.sensors-V2-ndk",
+                "android.hardware.sensors-V3-ndk",
                 "android.hardware.sensors@1.0",
                 "libhidlbase",
                 "libhidltransport",
@@ -5011,8 +5037,8 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "android.frameworks.cameraservice.common-V1-ndk",
-                "android.frameworks.cameraservice.device-V2-ndk",
-                "android.frameworks.cameraservice.service-V2-ndk",
+                "android.frameworks.cameraservice.device-V3-ndk",
+                "android.frameworks.cameraservice.service-V3-ndk",
                 "libbinder_ndk",
                 "libcamera_metadata",
                 "libcutils",
@@ -5250,7 +5276,7 @@ cc_prebuilt_library_shared {
                 "android.hardware.graphics.allocator@3.0",
                 "android.hardware.graphics.allocator@4.0",
                 "android.hardware.graphics.allocator-V2-ndk",
-                "android.hardware.graphics.common-V5-ndk",
+                "android.hardware.graphics.common-V7-ndk",
                 "android.hardware.graphics.common@1.2",
                 "android.hardware.graphics.mapper@2.0",
                 "android.hardware.graphics.mapper@2.1",
@@ -5433,106 +5459,6 @@ cc_prebuilt_library_shared {
                 "libion_mtk",
                 "libcodec2_mtk_c2store",
                 "libcodec2_vpp_fa_plugin",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libcodec2_simple_component",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libcodec2_simple_component.so",
-            ],
-            shared_libs: [
-                "libcodec2",
-                "libcodec2_vndk",
-                "libcutils",
-                "liblog",
-                "libstagefright_foundation",
-                "libutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libcodec2_soft_ac4dec",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libcodec2_soft_ac4dec.so",
-            ],
-            shared_libs: [
-                "libbase",
-                "libcodec2",
-                "libcodec2_vndk",
-                "libcodec2_soft_common",
-                "libSecC2ComponentStore",
-                "libstagefright_foundation",
-                "libdeccfg",
-                "libutils",
-                "libcutils",
-                "liblog",
-                "libprofileparamstorage",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libcodec2_soft_eac3dec",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libcodec2_soft_eac3dec.so",
-            ],
-            shared_libs: [
-                "libbase",
-                "libcodec2",
-                "libcodec2_vndk",
-                "libcodec2_soft_common",
-                "libSecC2ComponentStore",
-                "libstagefright_foundation",
-                "libdeccfg",
-                "libutils",
-                "libcutils",
-                "liblog",
-                "libprofileparamstorage",
                 "libc++",
                 "libc",
                 "libm",
@@ -5831,138 +5757,11 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libdeccfg.so",
             ],
             shared_libs: [
-                "libhidlbase",
-                "vendor.dolby.hardware.dms@2.0",
+                "libprofileparamstorage",
                 "libcutils",
                 "libutils",
                 "liblog",
                 "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libdisplayfeature",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libdisplayfeature.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libutils",
-                "libbinder",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libdisplayfeatureservice",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libdisplayfeatureservice.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libutils",
-                "libbinder",
-                "libbinder_ndk",
-                "vendor.xiaomi.hardware.displayfeature_aidl-V2-ndk",
-                "libdisplayfeature",
-                "libhidltransport",
-                "libhidlbase",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libdlbdsservice",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libdlbdsservice.so",
-            ],
-            shared_libs: [
-                "libutils",
-                "libstagefright_foundation-v33",
-                "liblog",
-                "libxml2",
-                "libdapparamstorage",
-                "libsqlite",
-                "libhidlbase",
-                "vendor.dolby.hardware.dms@2.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libecoengine",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libecoengine.so",
-            ],
-            shared_libs: [
-                "libc++",
-                "libcutils",
-                "liblog",
-                "libsync",
-                "libhidlbase",
-                "libhidltransport",
-                "libui",
-                "libcamera_metadata",
-                "libutils",
-                "libcom.xiaomi.debug",
                 "libc",
                 "libm",
                 "libdl",
@@ -6649,7 +6448,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libgpud.so",
             ],
             shared_libs: [
-                "android.hardware.graphics.common-V5-ndk",
+                "android.hardware.graphics.common-V7-ndk",
                 "android.hardware.graphics.allocator-V2-ndk",
                 "libcutils",
                 "libutils",
@@ -6818,7 +6617,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libgui_vendor.so",
             ],
             shared_libs: [
-                "android.hardware.graphics.common-V5-ndk",
+                "android.hardware.graphics.common-V7-ndk",
                 "android.hardware.graphics.bufferqueue@1.0",
                 "android.hardware.graphics.bufferqueue@2.0",
                 "android.hardware.graphics.common@1.1",
@@ -7028,38 +6827,6 @@ cc_prebuilt_library_shared {
                 "libion",
                 "libion_mtk",
                 "libdmabufheap",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libheifcapture",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libheifcapture.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libmediandk",
-                "libnativewindow",
-                "libsavscmn",
-                "libbase",
-                "libstagefright_foundation_vendor",
                 "libc++",
                 "libc",
                 "libm",
@@ -7596,6 +7363,37 @@ cc_prebuilt_library_shared {
                 "libmtkcam_hwutils",
                 "libaedv",
                 "libladder",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libminiui",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libminiui.so",
+            ],
+            shared_libs: [
+                "libpixelflinger",
+                "libpng",
+                "libutils",
+                "liblog",
+                "libcutils",
+                "libdrm",
+                "libbase",
                 "libc++",
                 "libc",
                 "libm",
@@ -8892,7 +8690,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "android.hardware.graphics.allocator-V2-ndk",
-                "android.hardware.graphics.common-V5-ndk",
+                "android.hardware.graphics.common-V7-ndk",
                 "android.hardware.graphics.allocator@2.0",
                 "android.hardware.graphics.allocator@4.0",
                 "android.hardware.graphics.mapper@2.0",
@@ -8940,7 +8738,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "libmtkcam_ulog",
                 "libbinder_ndk",
-                "android.hardware.camera.common-V2-ndk",
+                "android.hardware.camera.common-V1-ndk",
                 "android.hardware.camera.device-V3-ndk",
                 "libcamera_metadata",
                 "libc++",
@@ -9110,7 +8908,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "libmtkcam_ulog",
                 "libbinder_ndk",
-                "android.hardware.camera.common-V2-ndk",
+                "android.hardware.camera.common-V1-ndk",
                 "android.hardware.camera.device-V3-ndk",
                 "libcamera_metadata",
                 "libc++",
@@ -11101,7 +10899,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libofflinedebugdata",
+    name: "libpixelflinger",
     owner: "samsung",
     strip: {
         none: true,
@@ -11109,15 +10907,12 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/libofflinedebugdata.so",
+                "proprietary/vendor/lib64/libpixelflinger.so",
             ],
             shared_libs: [
-                "libutils",
                 "libcutils",
                 "liblog",
-                "libsync",
-                "libutilscallstack",
-                "libcom.xiaomi.debug",
+                "libutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -11274,7 +11069,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libprotobuf-cpp-full-3.9.1",
+    name: "libprofileparamstorage",
     owner: "samsung",
     strip: {
         none: true,
@@ -11282,11 +11077,13 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/libprotobuf-cpp-full-3.9.1.so",
+                "proprietary/vendor/lib64/libprofileparamstorage.so",
             ],
             shared_libs: [
-                "libz",
+                "libxml2",
+                "libcutils",
                 "liblog",
+                "libutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -12151,30 +11948,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libuuid.dylib",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libuuid.dylib.so",
-            ],
-            shared_libs: [
-                "libgetrandom.dylib",
-                "libstd.dylib",
-                "libc",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libuuid",
+    name: "libuuid_vendor",
+    stem: "libuuid",
     owner: "samsung",
     strip: {
         none: true,
@@ -12567,36 +12342,6 @@ cc_prebuilt_library_shared {
                 "libmtknetcap",
                 "libmtkutils",
                 "libccci_util",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libxlog",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libxlog.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libbinder_ndk",
-                "vendor.xiaomi.hardware.mediaeventgatherservice-V1-ndk",
-                "libbinder",
-                "libutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -13806,7 +13551,7 @@ cc_prebuilt_library_shared {
                 "libbinder_ndk",
                 "android.hardware.common-V2-ndk",
                 "android.hardware.common.fmq-V1-ndk",
-                "android.hardware.audio.common-V3-ndk",
+                "android.hardware.audio.common-V4-ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -14054,7 +13799,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libbinder_ndk",
                 "android.hardware.common-V2-ndk",
-                "android.hardware.graphics.common-V5-ndk",
+                "android.hardware.graphics.common-V7-ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -14704,7 +14449,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libbinder_ndk",
                 "android.hardware.common-V2-ndk",
-                "android.hardware.graphics.common-V5-ndk",
+                "android.hardware.graphics.common-V7-ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -14935,144 +14680,6 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-cc_prebuilt_library_shared {
-    name: "vendor.samsung.hardware.radio@2.0",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.samsung.hardware.radio@2.0.so",
-            ],
-            shared_libs: [
-                "android.hardware.radio@1.0",
-                "android.hardware.radio@1.1",
-                "android.hardware.radio@1.2",
-                "android.hardware.radio@1.3",
-                "android.hardware.radio@1.4",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.samsung.hardware.radio@2.1",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.samsung.hardware.radio@2.1.so",
-            ],
-            shared_libs: [
-                "android.hardware.radio@1.0",
-                "android.hardware.radio@1.1",
-                "android.hardware.radio@1.2",
-                "android.hardware.radio@1.3",
-                "android.hardware.radio@1.4",
-                "vendor.samsung.hardware.radio@2.0",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.samsung.hardware.radio@2.2",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.samsung.hardware.radio@2.2.so",
-            ],
-            shared_libs: [
-                "android.hardware.radio@1.0",
-                "android.hardware.radio@1.1",
-                "android.hardware.radio@1.2",
-                "android.hardware.radio@1.3",
-                "android.hardware.radio@1.4",
-                "vendor.samsung.hardware.radio@2.0",
-                "vendor.samsung.hardware.radio@2.1",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vpp_hdrmeta_handler_plugin",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vpp_hdrmeta_handler_plugin.so",
-            ],
-            shared_libs: [
-                "libcodec2_soft_common",
-                "libsfplugin_ccodec_utils",
-                "libstagefright_foundation",
-                "libcodec2",
-                "libcodec2_vndk",
-                "libgralloc_extra",
-                "liblog",
-                "libbase",
-                "libutils",
-                "libcutils",
-                "libpq_sec",
-                "libswtcc",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
 prebuilt_apex {
     name: "com.google.android.widevine.nonupdatable",
     owner: "samsung",
@@ -15100,6 +14707,15 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
+    name: "android.hardware.wifi-service-lazy-mediatek.xml",
+    owner: "samsung",
+    src: "proprietary/vendor/etc/vintf/manifest/android.hardware.wifi-service-lazy-mediatek.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+prebuilt_etc_xml {
     name: "manifest_allocator.xml",
     owner: "samsung",
     src: "proprietary/vendor/etc/vintf/manifest/manifest_allocator.xml",
@@ -15121,6 +14737,15 @@ prebuilt_etc_xml {
     name: "mapper.mediatek.xml",
     owner: "samsung",
     src: "proprietary/vendor/etc/vintf/manifest/mapper.mediatek.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+prebuilt_etc_xml {
+    name: "media_c2_mtk.xml",
+    owner: "samsung",
+    src: "proprietary/vendor/etc/vintf/manifest/media_c2_mtk.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
@@ -15359,7 +14984,7 @@ cc_prebuilt_binary {
                 "proprietary/vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek",
             ],
             shared_libs: [
-                "android.hardware.graphics.common-V6-ndk",
+                "android.hardware.graphics.common-V7-ndk",
                 "libgralloc_extra",
                 "libgralloc_metadata",
                 "libgralloctypes_mtk",
@@ -15427,6 +15052,55 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "android.hardware.media.c2@1.2-mediatek-64b",
+    owner: "samsung",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b",
+            ],
+            shared_libs: [
+                "server_configurable_flags",
+                "libaconfig_storage_read_api_cc",
+                "libcodec2_hal_common",
+                "android.hardware.media.c2-V1-ndk",
+                "libcodec2_aidl",
+                "libbase",
+                "liblog",
+                "libcodec2",
+                "libutils",
+                "android.hardware.media.c2@1.0",
+                "android.hardware.media.c2@1.1",
+                "android.hardware.media.c2@1.2",
+                "libcodec2_hidl@1.0",
+                "libcodec2_hidl@1.1",
+                "libcodec2_hidl@1.2",
+                "libcodec2_vndk",
+                "libhidlbase",
+                "libcutils",
+                "libavservices_minijail",
+                "libbinder",
+                "libbinder_ndk",
+                "libcodec2_mtk_c2store",
+                "libcodec2_mtk_vdec",
+                "libcodec2_mtk_venc",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "android.hardware.security.skeymint-service",
     owner: "samsung",
     target: {
@@ -15434,10 +15108,29 @@ cc_prebuilt_binary {
             srcs: [
                 "proprietary/vendor/bin/hw/android.hardware.security.skeymint-service",
             ],
+            shared_libs: [
+                "libskeymint10device",
+                "vendor.samsung.hardware.keymint-V1-ndk",
+                "android.hardware.security.keymint-V1-ndk",
+                "android.hardware.security.rkp-V1-ndk",
+                "android.hardware.security.sharedsecret-V1-ndk",
+                "android.hardware.security.secureclock-V1-ndk",
+                "libbase",
+                "libbinder_ndk",
+                "libcppbor",
+                "libcrypto",
+                "libkeymaster_portable",
+                "liblog",
+                "libpuresoftkeymasterdevice",
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     strip: {
         none: true,
     },
@@ -15465,6 +15158,41 @@ cc_prebuilt_binary {
                 "libhidlbase",
                 "liblog",
                 "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "android.hardware.wifi-service-lazy-mediatek",
+    owner: "samsung",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/hw/android.hardware.wifi-service-lazy-mediatek",
+            ],
+            shared_libs: [
+                "libbase",
+                "libbinder_ndk",
+                "libcutils",
+                "liblog",
+                "libnl",
+                "libutils",
+                "libwifi-hal",
+                "libwifi-system-iface",
+                "libxml2",
+                "android.hardware.wifi-V2-ndk-v34",
                 "libc++",
                 "libc",
                 "libm",
@@ -15775,7 +15503,7 @@ cc_prebuilt_binary {
                 "libbase",
                 "libutils",
                 "android.frameworks.sensorservice-V1-ndk",
-                "android.hardware.sensors-V2-ndk",
+                "android.hardware.sensors-V3-ndk",
                 "libbinder_ndk",
                 "libsensorndkbridge",
                 "libc++",
@@ -16060,7 +15788,7 @@ cc_prebuilt_binary {
             ],
             shared_libs: [
                 "libteecl",
-                "libuuid",
+                "libuuid_vendor",
                 "liblog",
                 "libdl",
                 "libc",
@@ -16085,7 +15813,7 @@ cc_prebuilt_binary {
             ],
             shared_libs: [
                 "libteecl",
-                "libuuid",
+                "libuuid_vendor",
                 "liblog",
                 "libdl",
                 "libc",
@@ -16333,6 +16061,90 @@ cc_prebuilt_binary {
     },
     prefer: true,
     soc_specific: true,
+}
+
+install_symlink {
+    name: "vendor_etc_audio_param_cust_audio_param_swa_AudioParamOptions_xml",
+    soc_specific: true,
+    installed_location: "etc/audio_param_cust/audio_param_swa/AudioParamOptions.xml",
+    symlink_target: "/vendor/etc/audio_param/AudioParamOptions.xml",
+}
+
+install_symlink {
+    name: "vendor_etc_audio_param_cust_audio_param_sea_AudioParamOptions_xml",
+    soc_specific: true,
+    installed_location: "etc/audio_param_cust/audio_param_sea/AudioParamOptions.xml",
+    symlink_target: "/vendor/etc/audio_param/AudioParamOptions.xml",
+}
+
+install_symlink {
+    name: "vendor_etc_audio_param_cust_audio_param_mea_AudioParamOptions_xml",
+    soc_specific: true,
+    installed_location: "etc/audio_param_cust/audio_param_mea/AudioParamOptions.xml",
+    symlink_target: "/vendor/etc/audio_param/AudioParamOptions.xml",
+}
+
+install_symlink {
+    name: "vendor_etc_audio_param_cust_audio_param_la_AudioParamOptions_xml",
+    soc_specific: true,
+    installed_location: "etc/audio_param_cust/audio_param_la/AudioParamOptions.xml",
+    symlink_target: "/vendor/etc/audio_param/AudioParamOptions.xml",
+}
+
+install_symlink {
+    name: "vendor_etc_audio_param_cust_audio_param_AudioParamOptions_xml",
+    soc_specific: true,
+    installed_location: "etc/audio_param_cust/audio_param/AudioParamOptions.xml",
+    symlink_target: "/vendor/etc/audio_param/AudioParamOptions.xml",
+}
+
+install_symlink {
+    name: "vendor_etc_audio_param_cust_audio_param_cis_AudioParamOptions_xml",
+    soc_specific: true,
+    installed_location: "etc/audio_param_cust/audio_param_cis/AudioParamOptions.xml",
+    symlink_target: "/vendor/etc/audio_param/AudioParamOptions.xml",
+}
+
+install_symlink {
+    name: "vendor_etc_audio_param_cust_audio_param_AudioParamOptions_vext_xml",
+    soc_specific: true,
+    installed_location: "etc/audio_param_cust/audio_param/AudioParamOptions_vext.xml",
+    symlink_target: "/vendor/etc/audio_param/AudioParamOptions_vext.xml",
+}
+
+install_symlink {
+    name: "vendor_etc_audio_param_cust_audio_param_swa_AudioParamOptions_vext_xml",
+    soc_specific: true,
+    installed_location: "etc/audio_param_cust/audio_param_swa/AudioParamOptions_vext.xml",
+    symlink_target: "/vendor/etc/audio_param/AudioParamOptions_vext.xml",
+}
+
+install_symlink {
+    name: "vendor_etc_audio_param_cust_audio_param_sea_AudioParamOptions_vext_xml",
+    soc_specific: true,
+    installed_location: "etc/audio_param_cust/audio_param_sea/AudioParamOptions_vext.xml",
+    symlink_target: "/vendor/etc/audio_param/AudioParamOptions_vext.xml",
+}
+
+install_symlink {
+    name: "vendor_etc_audio_param_cust_audio_param_la_AudioParamOptions_vext_xml",
+    soc_specific: true,
+    installed_location: "etc/audio_param_cust/audio_param_la/AudioParamOptions_vext.xml",
+    symlink_target: "/vendor/etc/audio_param/AudioParamOptions_vext.xml",
+}
+
+install_symlink {
+    name: "vendor_etc_audio_param_cust_audio_param_mea_AudioParamOptions_vext_xml",
+    soc_specific: true,
+    installed_location: "etc/audio_param_cust/audio_param_mea/AudioParamOptions_vext.xml",
+    symlink_target: "/vendor/etc/audio_param/AudioParamOptions_vext.xml",
+}
+
+install_symlink {
+    name: "vendor_etc_audio_param_cust_audio_param_cis_AudioParamOptions_vext_xml",
+    soc_specific: true,
+    installed_location: "etc/audio_param_cust/audio_param_cis/AudioParamOptions_vext.xml",
+    symlink_target: "/vendor/etc/audio_param/AudioParamOptions_vext.xml",
 }
 
 install_symlink {

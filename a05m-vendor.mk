@@ -1315,8 +1315,10 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/a05m/proprietary/vendor/etc/gralloc/vpu.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gralloc/vpu.xml \
     vendor/samsung/a05m/proprietary/vendor/etc/init/android.hardware.graphics.allocator-V2-service-mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.graphics.allocator-V2-service-mediatek.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/android.hardware.graphics.composer@3.3-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.graphics.composer@3.3-service.rc \
+    vendor/samsung/a05m/proprietary/vendor/etc/init/android.hardware.media.c2-mediatek-64b.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.media.c2-mediatek-64b.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/android.hardware.security.skeymint-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.security.skeymint-service.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/android.hardware.usb@1.3-service.coral.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.usb@1.3-service.coral.rc \
+    vendor/samsung/a05m/proprietary/vendor/etc/init/android.hardware.wifi-service-lazy-mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.wifi-service-lazy-mediatek.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/camerahalserver.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/camerahalserver.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/chipinfo_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/chipinfo_init.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/factorybsp_service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/factorybsp_service.rc \
@@ -1484,6 +1486,7 @@ PRODUCT_PACKAGES += \
     libMtkSpeechEnh_swb \
     libNoFpsActor \
     libOpenCL \
+    libSQLiteModule_VER_ALL \
     libSemDataProps \
     libSemTelephonyProps \
     libSonyIMX230PdafLibrary \
@@ -1589,9 +1592,6 @@ PRODUCT_PACKAGES += \
     libcodec2_mtk_c2store \
     libcodec2_mtk_vdec \
     libcodec2_mtk_venc \
-    libcodec2_simple_component \
-    libcodec2_soft_ac4dec \
-    libcodec2_soft_eac3dec \
     libcodec2_vpp_fa_plugin \
     libcodec2_vpp_mi_plugin \
     libcodec2_vpp_qt_plugin \
@@ -1602,10 +1602,6 @@ PRODUCT_PACKAGES += \
     libcvsd_mtk \
     libdapparamstorage \
     libdeccfg \
-    libdisplayfeature \
-    libdisplayfeatureservice \
-    libdlbdsservice \
-    libecoengine \
     libeffecthal.base \
     libengmode_client \
     libexifa.camera.samsung \
@@ -1639,7 +1635,6 @@ PRODUCT_PACKAGES += \
     libh264dec_sd.ca7 \
     libh264dec_se.ca7 \
     libheichal \
-    libheifcapture \
     libhevce_sb.ca7.android \
     libhidparser \
     libhwm \
@@ -1659,6 +1654,7 @@ PRODUCT_PACKAGES += \
     libladder \
     liblpcnr \
     libmfllcore \
+    libminiui \
     libmipc \
     libmmprofile \
     libmnl \
@@ -1760,13 +1756,13 @@ PRODUCT_PACKAGES += \
     libnvram_sec \
     libnxp_extamp_intf \
     liboemcrypto \
-    libofflinedebugdata \
+    libpixelflinger \
     libpq_cust_base \
     libpqhdrmetaparser \
     libpqsharememory \
     libpqtuning \
     libpqxmlparser \
-    libprotobuf-cpp-full-3.9.1 \
+    libprofileparamstorage \
     libratconfig \
     librcs_volte_core \
     libremosaic_wrapper \
@@ -1796,8 +1792,7 @@ PRODUCT_PACKAGES += \
     libthha \
     libtrm \
     libudf \
-    libuuid.dylib \
-    libuuid \
+    libuuid_vendor \
     libvcodec_oal \
     libvcodec_utility_v3a \
     libvcodecdrv_header_stub \
@@ -1812,7 +1807,6 @@ PRODUCT_PACKAGES += \
     libwifinvramdata \
     libwpa_client \
     libwpfa \
-    libxlog \
     libdpframework \
     libmmagent \
     libmml \
@@ -1900,16 +1894,14 @@ PRODUCT_PACKAGES += \
     vendor.samsung.hardware.radio.bridge@2.0 \
     vendor.samsung.hardware.radio.bridge@2.1 \
     vendor.samsung.hardware.radio.channel@2.0 \
-    vendor.samsung.hardware.radio@2.0 \
-    vendor.samsung.hardware.radio@2.1 \
-    vendor.samsung.hardware.radio@2.2 \
-    vpp_hdrmeta_handler_plugin \
     com.google.android.widevine.nonupdatable \
     CommandService.xml \
     android.hardware.usb@1.3-service.coral.xml \
+    android.hardware.wifi-service-lazy-mediatek.xml \
     manifest_allocator.xml \
     manifest_hwcomposer.xml \
     mapper.mediatek.xml \
+    media_c2_mtk.xml \
     vendor.samsung.hardware.radio.exclude.mediatek.xml \
     vendor.samsung.hardware.radio.exclude_ship.mediatek.xml \
     vendor.samsung.hardware.radio_manifest_2_30.xml \
@@ -1924,8 +1916,10 @@ PRODUCT_PACKAGES += \
     fuelgauged_nvram \
     android.hardware.graphics.allocator-V2-service-mediatek \
     android.hardware.graphics.composer@3.3-service \
+    android.hardware.media.c2@1.2-mediatek-64b \
     android.hardware.security.skeymint-service \
     android.hardware.usb@1.3-service.coral \
+    android.hardware.wifi-service-lazy-mediatek \
     camerahalserver \
     rild \
     vendor.mediatek.hardware.mmagent-service \
@@ -1957,6 +1951,18 @@ PRODUCT_PACKAGES += \
     wvkprov
 
 PRODUCT_PACKAGES += \
+    vendor_etc_audio_param_cust_audio_param_AudioParamOptions_xml \
+    vendor_etc_audio_param_cust_audio_param_swa_AudioParamOptions_xml \
+    vendor_etc_audio_param_cust_audio_param_sea_AudioParamOptions_xml \
+    vendor_etc_audio_param_cust_audio_param_mea_AudioParamOptions_xml \
+    vendor_etc_audio_param_cust_audio_param_la_AudioParamOptions_xml \
+    vendor_etc_audio_param_cust_audio_param_cis_AudioParamOptions_xml \
+    vendor_etc_audio_param_cust_audio_param_swa_AudioParamOptions_vext_xml \
+    vendor_etc_audio_param_cust_audio_param_sea_AudioParamOptions_vext_xml \
+    vendor_etc_audio_param_cust_audio_param_la_AudioParamOptions_vext_xml \
+    vendor_etc_audio_param_cust_audio_param_mea_AudioParamOptions_vext_xml \
+    vendor_etc_audio_param_cust_audio_param_AudioParamOptions_vext_xml \
+    vendor_etc_audio_param_cust_audio_param_cis_AudioParamOptions_vext_xml \
     vendor_lib64_libdpframework_so \
     vendor_lib64_libmmagent_so \
     vendor_lib64_libmml_so \
