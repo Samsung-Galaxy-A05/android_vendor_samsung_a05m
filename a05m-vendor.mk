@@ -1313,12 +1313,13 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/a05m/proprietary/vendor/etc/gralloc/dpu_aeu.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gralloc/dpu_aeu.xml \
     vendor/samsung/a05m/proprietary/vendor/etc/gralloc/gpu.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gralloc/gpu.xml \
     vendor/samsung/a05m/proprietary/vendor/etc/gralloc/vpu.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gralloc/vpu.xml \
+    vendor/samsung/a05m/proprietary/vendor/etc/init/android.hardware.audio.service-aidl.mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.audio.service-aidl.mediatek.rc \
+    vendor/samsung/a05m/proprietary/vendor/etc/init/android.hardware.gatekeeper-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gatekeeper-service.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/android.hardware.graphics.allocator-V2-service-mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.graphics.allocator-V2-service-mediatek.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/android.hardware.graphics.composer@3.3-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.graphics.composer@3.3-service.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/android.hardware.media.c2-mediatek-64b.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.media.c2-mediatek-64b.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/android.hardware.security.skeymint-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.security.skeymint-service.rc \
-    vendor/samsung/a05m/proprietary/vendor/etc/init/android.hardware.usb@1.3-service.coral.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.usb@1.3-service.coral.rc \
-    vendor/samsung/a05m/proprietary/vendor/etc/init/android.hardware.wifi-service-lazy-mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.wifi-service-lazy-mediatek.rc \
+    vendor/samsung/a05m/proprietary/vendor/etc/init/android.hardware.usb-aidl-service.mediatekv1.0.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.usb-aidl-service.mediatekv1.0.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/camerahalserver.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/camerahalserver.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/chipinfo_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/chipinfo_init.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/factorybsp_service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/factorybsp_service.rc \
@@ -1346,7 +1347,7 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/a05m/proprietary/vendor/etc/init/vendor.mediatek.hardware.mms-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.mediatek.hardware.mms-service.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/vendor.mediatek.hardware.nvram-sevice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.mediatek.hardware.nvram-sevice.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/vendor.samsung.hardware.gnss-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.samsung.hardware.gnss-service.rc \
-    vendor/samsung/a05m/proprietary/vendor/etc/init/vendor.samsung.rilchip.mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.samsung.rilchip.mediatek.rc \
+    vendor/samsung/a05m/proprietary/vendor/etc/init/vendor.samsung.rilchip.slsi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.samsung.rilchip.slsi.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/volte_clientapi_ua.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/volte_clientapi_ua.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/wlan_assistant.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wlan_assistant.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/locale/plmn_delta_eng.bin:$(TARGET_COPY_OUT_VENDOR)/etc/locale/plmn_delta_eng.bin \
@@ -1365,6 +1366,7 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/a05m/proprietary/vendor/etc/plmn_delta_hktw.bin:$(TARGET_COPY_OUT_VENDOR)/etc/plmn_delta_hktw.bin \
     vendor/samsung/a05m/proprietary/vendor/etc/plmn_delta_ltn.bin:$(TARGET_COPY_OUT_VENDOR)/etc/plmn_delta_ltn.bin \
     vendor/samsung/a05m/proprietary/vendor/etc/plmn_delta_usagsm.bin:$(TARGET_COPY_OUT_VENDOR)/etc/plmn_delta_usagsm.bin \
+    vendor/samsung/a05m/proprietary/vendor/etc/plmn_se13.bin:$(TARGET_COPY_OUT_VENDOR)/etc/plmn_se13.bin \
     vendor/samsung/a05m/proprietary/vendor/etc/plmn_se13_prebuilt.bin:$(TARGET_COPY_OUT_VENDOR)/etc/plmn_se13_prebuilt.bin \
     vendor/samsung/a05m/proprietary/vendor/etc/power_app_cfg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/power_app_cfg.xml \
     vendor/samsung/a05m/proprietary/vendor/etc/powercontable.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powercontable.xml \
@@ -1419,6 +1421,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     AVCSecureVdecCA \
     VP9SecureVdecCA \
+    android.hardware.audio.core-impl-mediatek \
+    android.hardware.bluetooth.audio-impl-mediatek \
     arm.graphics-V5-ndk \
     arm.mali.platform-V2-ndk \
     camera.device@3.2-impl \
@@ -1431,10 +1435,11 @@ PRODUCT_PACKAGES += \
     libMEOW_qt \
     libMEOW_trace \
     gnss_aidl_lib \
+    android.hardware.audio.effect.aidl-impl-mediatek \
     android.hardware.camera.provider@2.6-impl-mediatek \
-    android.hardware.gatekeeper@1.0-impl \
     android.hardware.graphics.allocator-V2-mediatek \
     android.hardware.sensors@2.X-subhal-mediatek \
+    android.hardware.soundtrigger3-impl \
     audio.primary.mt6768 \
     audio.r_submix.mt6768 \
     camera.mt6768 \
@@ -1445,6 +1450,8 @@ PRODUCT_PACKAGES += \
     sensors.mt6768 \
     sound_trigger.primary.default \
     thermal_hal \
+    vendor.mediatek.hardware.audio-impl \
+    vendor.mediatek.hardware.bluetooth.audio@2.1-impl \
     vendor.mediatek.hardware.camera.atms_aidl@1.0-impl \
     vendor.mediatek.hardware.camera.bgservice_aidl@1.0-impl \
     vendor.mediatek.hardware.camera.isphal_aidl@1.0-impl \
@@ -1499,8 +1506,6 @@ PRODUCT_PACKAGES += \
     libSonyIMX519PdafLibraryWrapper \
     libSupperLongExposure \
     libTEECommon \
-    libVendorSemDataProps \
-    libVendorSemTelephonyProps \
     lib_bsscore \
     lib_iir \
     libaal_cust \
@@ -1514,6 +1519,7 @@ PRODUCT_PACKAGES += \
     libarm_egl_properties_sysprop \
     libarm_gralloc_properties_sysprop \
     libarm_mali_config_sysprops \
+    libaudio_aidl_conversion_common_ndk_prebuilt \
     libaudio_param_parser-vnd \
     libaudiocompensationfilter_vendor \
     libaudiocompensationfilterc \
@@ -1803,7 +1809,6 @@ PRODUCT_PACKAGES += \
     libvpu5 \
     libvpudv3a_vcodec \
     libwapi \
-    libwifi-hal-mtk \
     libwifinvramdata \
     libwpa_client \
     libwpfa \
@@ -1891,21 +1896,26 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.videotelephony-V1-ndk \
     vendor.samsung.hardware.gnss-V4-ndk \
     vendor.samsung.hardware.keymint-V1-ndk \
-    vendor.samsung.hardware.radio.bridge@2.0 \
-    vendor.samsung.hardware.radio.bridge@2.1 \
-    vendor.samsung.hardware.radio.channel@2.0 \
+    vendor.samsung.hardware.radio-V1-ndk \
+    vendor.samsung.hardware.radio.bridge-V1-ndk \
+    vendor.samsung.hardware.radio.channel-V1-ndk \
+    vendor.samsung.hardware.radio.data-V1-ndk \
+    vendor.samsung.hardware.radio.messaging-V1-ndk \
+    vendor.samsung.hardware.radio.sim-V1-ndk \
     com.google.android.widevine.nonupdatable \
     CommandService.xml \
-    android.hardware.usb@1.3-service.coral.xml \
-    android.hardware.wifi-service-lazy-mediatek.xml \
+    android.hardware.audio.service-aidl.mediatek.xml \
+    android.hardware.usb-aidl-service.mediatekv1.0.xml \
+    bluetooth_audio_mtk.xml \
     manifest_allocator.xml \
     manifest_hwcomposer.xml \
     mapper.mediatek.xml \
     media_c2_mtk.xml \
     vendor.samsung.hardware.radio.exclude.mediatek.xml \
+    vendor.samsung.hardware.radio.exclude.slsi.xml \
     vendor.samsung.hardware.radio.exclude_ship.mediatek.xml \
-    vendor.samsung.hardware.radio_manifest_2_30.xml \
-    vendor.samsung.hardware.sehradio_manifest_2_30.xml \
+    vendor.samsung.hardware.radio_manifest_2_33.xml \
+    vendor.samsung.hardware.sehradio_manifest_2_33.xml \
     ccci_mdinit \
     ccci_rpcd \
     check_keybox \
@@ -1914,12 +1924,13 @@ PRODUCT_PACKAGES += \
     create_factory_efs_file \
     fuelgauged \
     fuelgauged_nvram \
+    android.hardware.audio.service-aidl.mediatek \
+    android.hardware.gatekeeper-service \
     android.hardware.graphics.allocator-V2-service-mediatek \
     android.hardware.graphics.composer@3.3-service \
     android.hardware.media.c2@1.2-mediatek-64b \
     android.hardware.security.skeymint-service \
-    android.hardware.usb@1.3-service.coral \
-    android.hardware.wifi-service-lazy-mediatek \
+    android.hardware.usb-aidl-service.mediatekv1.0 \
     camerahalserver \
     rild \
     vendor.mediatek.hardware.mmagent-service \
@@ -1951,11 +1962,11 @@ PRODUCT_PACKAGES += \
     wvkprov
 
 PRODUCT_PACKAGES += \
-    vendor_etc_audio_param_cust_audio_param_AudioParamOptions_xml \
     vendor_etc_audio_param_cust_audio_param_swa_AudioParamOptions_xml \
     vendor_etc_audio_param_cust_audio_param_sea_AudioParamOptions_xml \
     vendor_etc_audio_param_cust_audio_param_mea_AudioParamOptions_xml \
     vendor_etc_audio_param_cust_audio_param_la_AudioParamOptions_xml \
+    vendor_etc_audio_param_cust_audio_param_AudioParamOptions_xml \
     vendor_etc_audio_param_cust_audio_param_cis_AudioParamOptions_xml \
     vendor_etc_audio_param_cust_audio_param_swa_AudioParamOptions_vext_xml \
     vendor_etc_audio_param_cust_audio_param_sea_AudioParamOptions_vext_xml \

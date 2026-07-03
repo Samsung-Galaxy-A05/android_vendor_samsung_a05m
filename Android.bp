@@ -75,6 +75,90 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "android.hardware.audio.core-impl-mediatek",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/android.hardware.audio.core-impl-mediatek.so",
+            ],
+            shared_libs: [
+                "libaudioutils_shim",
+                "android.hardware.bluetooth.audio-V4-ndk",
+                "android.hardware.audio.core.sounddose-V2-ndk",
+                "android.hardware.audio.core-V2-ndk",
+                "android.media.audio.common.types-V3-ndk",
+                "libalsautilsv2",
+                "libaudioaidlcommon",
+                "libaudioutils",
+                "libbase",
+                "libbinder_ndk",
+                "libcutils",
+                "libfmq",
+                "libnbaio_mono",
+                "libtinyalsav2",
+                "libutils",
+                "libxml2",
+                "android.hardware.common-V2-ndk",
+                "android.hardware.common.fmq-V1-ndk",
+                "android.hardware.bluetooth.audio-impl-mediatek",
+                "libaudio_aidl_conversion_common_ndk_prebuilt",
+                "libbluetooth_audio_session_aidl_mtk",
+                "libstagefright_foundation",
+                "liblog",
+                "libhardware",
+                "libmedia_helper",
+                "libutilscallstack",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.bluetooth.audio-impl-mediatek",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/android.hardware.bluetooth.audio-impl-mediatek.so",
+            ],
+            shared_libs: [
+                "android.hardware.bluetooth.audio-V4-ndk",
+                "libbase",
+                "libbinder_ndk",
+                "libcutils",
+                "libfmq",
+                "liblog",
+                "libbluetooth_audio_session_aidl_mtk",
+                "vendor.mediatek.hardware.bluetooth.audio-V1-ndk",
+                "vendor.mediatek.hardware.bluetooth.audio@2.1",
+                "vendor.mediatek.hardware.bluetooth.audio@2.2",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "arm.graphics-V5-ndk",
     owner: "samsung",
     strip: {
@@ -475,6 +559,44 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "android.hardware.audio.effect.aidl-impl-mediatek",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/android.hardware.audio.effect.aidl-impl-mediatek.so",
+            ],
+            shared_libs: [
+                "android.hardware.audio.effect-V2-ndk",
+                "android.media.audio.common.types-V3-ndk",
+                "libaudioaidlcommon",
+                "libaudioutils",
+                "libbase",
+                "libbinder_ndk",
+                "libcutils",
+                "libfmq",
+                "liblog",
+                "libutils",
+                "android.hardware.common-V2-ndk",
+                "android.hardware.common.fmq-V1-ndk",
+                "libtinyxml2-v34",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "android.hardware.camera.provider@2.6-impl-mediatek",
     owner: "samsung",
     strip: {
@@ -513,36 +635,6 @@ cc_prebuilt_library_shared {
                 "libmtkcam_diputils",
                 "libmtkcam_metastore",
                 "libmtkcam_hwutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    relative_install_path: "hw",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "android.hardware.gatekeeper@1.0-impl",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl.so",
-            ],
-            shared_libs: [
-                "android.hardware.gatekeeper@1.0",
-                "libhardware",
-                "libhidlbase",
-                "libutils",
-                "liblog",
                 "libc++",
                 "libc",
                 "libm",
@@ -627,6 +719,39 @@ cc_prebuilt_library_shared {
                 "libhidlbase",
                 "liblog",
                 "libpower",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.soundtrigger3-impl",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/android.hardware.soundtrigger3-impl.so",
+            ],
+            shared_libs: [
+                "android.hardware.soundtrigger3-V2-ndk",
+                "libbase",
+                "libbinder_ndk",
+                "libutils",
+                "libcutils",
+                "libhardware",
+                "libaudio_aidl_conversion_common_ndk_prebuilt",
+                "liblog",
                 "libc++",
                 "libc",
                 "libm",
@@ -966,7 +1091,6 @@ cc_prebuilt_library_shared {
                 "libhardware",
                 "libmedia_helper",
                 "libhidlbase",
-                "libaedv",
                 "libxml2",
                 "libc++",
                 "libc",
@@ -996,6 +1120,80 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libcutils",
                 "libhardware",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.mediatek.hardware.audio-impl",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/vendor.mediatek.hardware.audio-impl.so",
+            ],
+            shared_libs: [
+                "libbase",
+                "libbinder_ndk",
+                "libcutils",
+                "liblog",
+                "libmediautils_vendor",
+                "libmedia_helper",
+                "libmemunreachable",
+                "libutils",
+                "vendor.mediatek.hardware.audio-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.mediatek.hardware.bluetooth.audio@2.1-impl",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.1-impl.so",
+            ],
+            shared_libs: [
+                "android.hardware.bluetooth.audio-V4-ndk",
+                "vendor.mediatek.hardware.bluetooth.audio@2.1",
+                "vendor.mediatek.hardware.bluetooth.audio-V1-ndk",
+                "libbase",
+                "libbluetooth_audio_session_mediatek",
+                "libcutils",
+                "libfmq",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libhardware",
+                "android.hardware.audio@6.0",
+                "android.hardware.audio.common@6.0",
+                "android.hardware.audio.common@6.0-util",
+                "vendor.mediatek.hardware.audio@6.1",
                 "libc++",
                 "libc",
                 "libm",
@@ -2535,56 +2733,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libVendorSemDataProps",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libVendorSemDataProps.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libVendorSemTelephonyProps",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libVendorSemTelephonyProps.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "lib_bsscore",
     owner: "samsung",
     strip: {
@@ -2985,6 +3133,25 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libaudio_aidl_conversion_common_ndk_prebuilt",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libaudio_aidl_conversion_common_ndk_prebuilt.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -11243,27 +11410,30 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libril_sem.so",
             ],
             shared_libs: [
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libhardware_legacy",
-                "librilutils",
+                "libhidlbase",
                 "android.hardware.radio@1.0",
                 "android.hardware.radio@1.1",
-                "android.hardware.radio.deprecated@1.0",
-                "android.hardware.radio.config@1.0",
-                "android.hardware.radio.config@1.1",
-                "android.hardware.radio.config@1.2",
-                "libhidlbase",
                 "android.hardware.radio@1.2",
-                "android.hardware.radio@1.3",
-                "android.hardware.radio@1.4",
-                "android.hardware.radio@1.5",
-                "vendor.samsung.hardware.radio@2.0",
-                "vendor.samsung.hardware.radio.bridge@2.0",
-                "vendor.samsung.hardware.radio.bridge@2.1",
-                "vendor.samsung.hardware.radio@2.1",
-                "vendor.samsung.hardware.radio@2.2",
+                "libbase",
+                "libbinder_ndk",
+                "android.hardware.radio.config-V1-ndk",
+                "android.hardware.radio.data-V1-ndk",
+                "android.hardware.radio.messaging-V1-ndk",
+                "android.hardware.radio.modem-V1-ndk",
+                "android.hardware.radio.network-V1-ndk",
+                "android.hardware.radio.sim-V1-ndk",
+                "android.hardware.radio.voice-V1-ndk",
+                "vendor.samsung.hardware.radio.bridge-V1-ndk",
+                "vendor.samsung.hardware.radio.data-V1-ndk",
+                "vendor.samsung.hardware.radio.messaging-V1-ndk",
+                "vendor.samsung.hardware.radio.network-V1-ndk",
+                "vendor.samsung.hardware.radio.sim-V1-ndk",
+                "libcutils",
+                "libhardware_legacy",
+                "liblog",
+                "librilutils",
+                "libutils",
+                "libfloatingfeature",
                 "libc++",
                 "libc",
                 "libm",
@@ -11365,15 +11535,14 @@ cc_prebuilt_library_shared {
                 "libSemDataProps",
                 "libvkmanager_vendor",
                 "libengmode_client",
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "vendor.samsung.hardware.radio.channel@2.0",
+                "libbase",
+                "libbinder_ndk",
+                "vendor.samsung.hardware.radio.channel-V1-ndk",
                 "libsecnativefeature",
                 "libfloatingfeature",
                 "libsemnativecarrierfeature",
                 "libc++",
-                "libprotobuf-cpp-full-3.9.1-vendorcompat",
+                "libprotobuf-cpp-full-21.7",
                 "libc",
                 "libm",
                 "libdl",
@@ -12235,35 +12404,6 @@ cc_prebuilt_library_shared {
                 "libkeystore-wifi-hidl",
                 "libcrypto",
                 "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libwifi-hal-mtk",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libwifi-hal-mtk.so",
-            ],
-            shared_libs: [
-                "libbase",
-                "libcutils",
-                "liblog",
-                "libnl",
-                "libutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -14594,7 +14734,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.samsung.hardware.radio.bridge@2.0",
+    name: "vendor.samsung.hardware.radio-V1-ndk",
     owner: "samsung",
     strip: {
         none: true,
@@ -14602,14 +14742,10 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/vendor.samsung.hardware.radio.bridge@2.0.so",
+                "proprietary/vendor/lib64/vendor.samsung.hardware.radio-V1-ndk.so",
             ],
             shared_libs: [
-                "android.hardware.radio@1.0",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
+                "libbinder_ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -14623,7 +14759,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.samsung.hardware.radio.bridge@2.1",
+    name: "vendor.samsung.hardware.radio.bridge-V1-ndk",
     owner: "samsung",
     strip: {
         none: true,
@@ -14631,15 +14767,11 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/vendor.samsung.hardware.radio.bridge@2.1.so",
+                "proprietary/vendor/lib64/vendor.samsung.hardware.radio.bridge-V1-ndk.so",
             ],
             shared_libs: [
-                "android.hardware.radio@1.0",
-                "vendor.samsung.hardware.radio.bridge@2.0",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
+                "libbinder_ndk",
+                "vendor.samsung.hardware.radio-V1-ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -14653,7 +14785,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.samsung.hardware.radio.channel@2.0",
+    name: "vendor.samsung.hardware.radio.channel-V1-ndk",
     owner: "samsung",
     strip: {
         none: true,
@@ -14661,13 +14793,89 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/vendor.samsung.hardware.radio.channel@2.0.so",
+                "proprietary/vendor/lib64/vendor.samsung.hardware.radio.channel-V1-ndk.so",
             ],
             shared_libs: [
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
+                "libbinder_ndk",
+                "vendor.samsung.hardware.radio-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.samsung.hardware.radio.data-V1-ndk",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.samsung.hardware.radio.data-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "vendor.samsung.hardware.radio-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.samsung.hardware.radio.messaging-V1-ndk",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.samsung.hardware.radio.messaging-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "vendor.samsung.hardware.radio-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.samsung.hardware.radio.sim-V1-ndk",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.samsung.hardware.radio.sim-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "vendor.samsung.hardware.radio-V1-ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -14698,18 +14906,27 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-    name: "android.hardware.usb@1.3-service.coral.xml",
+    name: "android.hardware.audio.service-aidl.mediatek.xml",
     owner: "samsung",
-    src: "proprietary/vendor/etc/vintf/manifest/android.hardware.usb@1.3-service.coral.xml",
+    src: "proprietary/vendor/etc/vintf/manifest/android.hardware.audio.service-aidl.mediatek.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
 }
 
 prebuilt_etc_xml {
-    name: "android.hardware.wifi-service-lazy-mediatek.xml",
+    name: "android.hardware.usb-aidl-service.mediatekv1.0.xml",
     owner: "samsung",
-    src: "proprietary/vendor/etc/vintf/manifest/android.hardware.wifi-service-lazy-mediatek.xml",
+    src: "proprietary/vendor/etc/vintf/manifest/android.hardware.usb-aidl-service.mediatekv1.0.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+prebuilt_etc_xml {
+    name: "bluetooth_audio_mtk.xml",
+    owner: "samsung",
+    src: "proprietary/vendor/etc/vintf/manifest/bluetooth_audio_mtk.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
@@ -14761,6 +14978,15 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
+    name: "vendor.samsung.hardware.radio.exclude.slsi.xml",
+    owner: "samsung",
+    src: "proprietary/vendor/etc/vintf/manifest/vendor.samsung.hardware.radio.exclude.slsi.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+prebuilt_etc_xml {
     name: "vendor.samsung.hardware.radio.exclude_ship.mediatek.xml",
     owner: "samsung",
     src: "proprietary/vendor/etc/vintf/manifest/vendor.samsung.hardware.radio.exclude_ship.mediatek.xml",
@@ -14770,18 +14996,18 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-    name: "vendor.samsung.hardware.radio_manifest_2_30.xml",
+    name: "vendor.samsung.hardware.radio_manifest_2_33.xml",
     owner: "samsung",
-    src: "proprietary/vendor/etc/vintf/manifest/vendor.samsung.hardware.radio_manifest_2_30.xml",
+    src: "proprietary/vendor/etc/vintf/manifest/vendor.samsung.hardware.radio_manifest_2_33.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
 }
 
 prebuilt_etc_xml {
-    name: "vendor.samsung.hardware.sehradio_manifest_2_30.xml",
+    name: "vendor.samsung.hardware.sehradio_manifest_2_33.xml",
     owner: "samsung",
-    src: "proprietary/vendor/etc/vintf/manifest/vendor.samsung.hardware.sehradio_manifest_2_30.xml",
+    src: "proprietary/vendor/etc/vintf/manifest/vendor.samsung.hardware.sehradio_manifest_2_33.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
@@ -14976,6 +15202,93 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "android.hardware.audio.service-aidl.mediatek",
+    owner: "samsung",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/hw/android.hardware.audio.service-aidl.mediatek",
+            ],
+            shared_libs: [
+                "android.hardware.soundtrigger3-V2-ndk",
+                "android.hardware.audio.core-V2-ndk",
+                "android.hardware.bluetooth.audio-V4-ndk",
+                "android.hardware.audio.core.sounddose-V2-ndk",
+                "android.media.audio.common.types-V3-ndk",
+                "libalsautilsv2",
+                "libaudioaidlcommon",
+                "libaudioutils",
+                "libbase",
+                "libbinder_ndk",
+                "libcutils",
+                "libfmq",
+                "libnbaio_mono",
+                "libtinyalsav2",
+                "libutils",
+                "libxml2",
+                "android.hardware.common-V2-ndk",
+                "android.hardware.common.fmq-V1-ndk",
+                "android.hardware.audio.core-impl-mediatek",
+                "libaudio_aidl_conversion_common_ndk_prebuilt",
+                "libbluetooth_audio_session_aidl_mtk",
+                "libmedia_helper",
+                "libstagefright_foundation",
+                "android.hardware.bluetooth.audio-impl-mediatek",
+                "android.hardware.audio.effect.aidl-impl-mediatek",
+                "liblog",
+                "vendor.mediatek.hardware.audio-V1-ndk",
+                "vendor.mediatek.hardware.audio-impl",
+                "android.hardware.soundtrigger3-impl",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "android.hardware.gatekeeper-service",
+    owner: "samsung",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/hw/android.hardware.gatekeeper-service",
+            ],
+            shared_libs: [
+                "android.hardware.gatekeeper-V1-ndk",
+                "libbinder_ndk",
+                "libbase",
+                "libgatekeeper",
+                "libhardware",
+                "libhidlbase",
+                "libutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "android.hardware.graphics.allocator-V2-service-mediatek",
     owner: "samsung",
     target: {
@@ -15140,59 +15453,20 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
-    name: "android.hardware.usb@1.3-service.coral",
+    name: "android.hardware.usb-aidl-service.mediatekv1.0",
     owner: "samsung",
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/bin/hw/android.hardware.usb@1.3-service.coral",
+                "proprietary/vendor/bin/hw/android.hardware.usb-aidl-service.mediatekv1.0",
             ],
             shared_libs: [
-                "android.hardware.usb@1.0",
-                "android.hardware.usb@1.1",
-                "android.hardware.usb@1.2",
-                "android.hardware.usb@1.3",
-                "libbase",
-                "libcutils",
-                "libhardware",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    relative_install_path: "hw",
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "android.hardware.wifi-service-lazy-mediatek",
-    owner: "samsung",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/hw/android.hardware.wifi-service-lazy-mediatek",
-            ],
-            shared_libs: [
+                "android.hardware.usb-V1-ndk",
                 "libbase",
                 "libbinder_ndk",
                 "libcutils",
                 "liblog",
-                "libnl",
                 "libutils",
-                "libwifi-hal",
-                "libwifi-system-iface",
-                "libxml2",
-                "android.hardware.wifi-V2-ndk-v34",
                 "libc++",
                 "libc",
                 "libm",
@@ -16106,13 +16380,6 @@ install_symlink {
 }
 
 install_symlink {
-    name: "vendor_etc_audio_param_cust_audio_param_AudioParamOptions_vext_xml",
-    soc_specific: true,
-    installed_location: "etc/audio_param_cust/audio_param/AudioParamOptions_vext.xml",
-    symlink_target: "/vendor/etc/audio_param/AudioParamOptions_vext.xml",
-}
-
-install_symlink {
     name: "vendor_etc_audio_param_cust_audio_param_swa_AudioParamOptions_vext_xml",
     soc_specific: true,
     installed_location: "etc/audio_param_cust/audio_param_swa/AudioParamOptions_vext.xml",
@@ -16137,6 +16404,13 @@ install_symlink {
     name: "vendor_etc_audio_param_cust_audio_param_mea_AudioParamOptions_vext_xml",
     soc_specific: true,
     installed_location: "etc/audio_param_cust/audio_param_mea/AudioParamOptions_vext.xml",
+    symlink_target: "/vendor/etc/audio_param/AudioParamOptions_vext.xml",
+}
+
+install_symlink {
+    name: "vendor_etc_audio_param_cust_audio_param_AudioParamOptions_vext_xml",
+    soc_specific: true,
+    installed_location: "etc/audio_param_cust/audio_param/AudioParamOptions_vext.xml",
     symlink_target: "/vendor/etc/audio_param/AudioParamOptions_vext.xml",
 }
 
