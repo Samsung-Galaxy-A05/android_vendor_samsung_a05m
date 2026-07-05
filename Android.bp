@@ -75,6 +75,44 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "android.hardware.audio.common-V3-ndk_mtk",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/android.hardware.audio.common-V3-ndk_mtk.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.audio.core-V2-ndk_mtk",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/android.hardware.audio.core-V2-ndk_mtk.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "android.hardware.audio.core-impl-mediatek",
     owner: "samsung",
     strip: {
@@ -87,10 +125,10 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libaudioutils_shim",
-                "android.hardware.bluetooth.audio-V4-ndk",
-                "android.hardware.audio.core.sounddose-V2-ndk",
-                "android.hardware.audio.core-V2-ndk",
-                "android.media.audio.common.types-V3-ndk",
+                "android.hardware.bluetooth.audio-V4-ndk_mtk",
+                "android.hardware.audio.core.sounddose-V2-ndk_mtk",
+                "android.hardware.audio.core-V2-ndk_mtk",
+                "android.media.audio.common.types-V3-ndk_mtk",
                 "libalsautilsv2",
                 "libaudioaidlcommon",
                 "libaudioutils",
@@ -125,6 +163,63 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "android.hardware.audio.core.sounddose-V2-ndk_mtk",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/android.hardware.audio.core.sounddose-V2-ndk_mtk.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.audio.effect-V2-ndk_mtk",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/android.hardware.audio.effect-V2-ndk_mtk.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.bluetooth.audio-V4-ndk_mtk",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/android.hardware.bluetooth.audio-V4-ndk_mtk.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "android.hardware.bluetooth.audio-impl-mediatek",
     owner: "samsung",
     strip: {
@@ -136,7 +231,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/android.hardware.bluetooth.audio-impl-mediatek.so",
             ],
             shared_libs: [
-                "android.hardware.bluetooth.audio-V4-ndk",
+                "android.hardware.bluetooth.audio-V4-ndk_mtk",
                 "libbase",
                 "libbinder_ndk",
                 "libcutils",
@@ -154,6 +249,63 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.soundtrigger3-V2-ndk_mtk",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/android.hardware.soundtrigger3-V2-ndk_mtk.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.media.audio.common.types-V3-ndk_mtk",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/android.media.audio.common.types-V3-ndk_mtk.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.media.soundtrigger.types-V2-ndk_mtk",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/android.media.soundtrigger.types-V2-ndk_mtk.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -570,8 +722,8 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/hw/android.hardware.audio.effect.aidl-impl-mediatek.so",
             ],
             shared_libs: [
-                "android.hardware.audio.effect-V2-ndk",
-                "android.media.audio.common.types-V3-ndk",
+                "android.hardware.audio.effect-V2-ndk_mtk",
+                "android.media.audio.common.types-V3-ndk_mtk",
                 "libaudioaidlcommon",
                 "libaudioutils",
                 "libbase",
@@ -744,7 +896,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/hw/android.hardware.soundtrigger3-impl.so",
             ],
             shared_libs: [
-                "android.hardware.soundtrigger3-V2-ndk",
+                "android.hardware.soundtrigger3-V2-ndk_mtk",
                 "libbase",
                 "libbinder_ndk",
                 "libutils",
@@ -1179,7 +1331,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.1-impl.so",
             ],
             shared_libs: [
-                "android.hardware.bluetooth.audio-V4-ndk",
+                "android.hardware.bluetooth.audio-V4-ndk_mtk",
                 "vendor.mediatek.hardware.bluetooth.audio@2.1",
                 "vendor.mediatek.hardware.bluetooth.audio-V1-ndk",
                 "libbase",
@@ -5349,31 +5501,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libcarrierconfig",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libcarrierconfig.so",
-            ],
-            shared_libs: [
-                "libmtkcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libccci_util",
     owner: "samsung",
     strip: {
@@ -5527,7 +5654,7 @@ cc_prebuilt_library_shared {
                 "libcodec2_hidl@1.0",
                 "libcodec2_hidl@1.1",
                 "libcodec2_hidl@1.2",
-                "libformatter",
+                "libformatter_mtk",
                 "libdpframework",
                 "android.hardware.graphics.bufferqueue@2.0",
                 "android.hardware.media.bufferpool2-V2-ndk",
@@ -5595,7 +5722,7 @@ cc_prebuilt_library_shared {
                 "libcodec2_hidl@1.0",
                 "libcodec2_hidl@1.1",
                 "libcodec2_hidl@1.2",
-                "libformatter",
+                "libformatter_mtk",
                 "libdpframework",
                 "android.hardware.graphics.bufferqueue@2.0",
                 "android.hardware.media.bufferpool2-V2-ndk",
@@ -5876,33 +6003,6 @@ cc_prebuilt_library_shared {
                 "libm",
                 "libc++",
                 "libc",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libdapparamstorage",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libdapparamstorage.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
                 "libdl",
             ],
         },
@@ -7627,7 +7727,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libmnl",
+    name: "libmnl_mtk",
     owner: "samsung",
     strip: {
         none: true,
@@ -7635,7 +7735,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/libmnl.so",
+                "proprietary/vendor/lib64/libmnl_mtk.so",
             ],
             shared_libs: [
                 "libc++",
@@ -13705,31 +13805,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.camera.aovservice-V2-ndk",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.mediatek.hardware.camera.aovservice-V2-ndk.so",
-            ],
-            shared_libs: [
-                "libbinder_ndk",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.mediatek.hardware.camera.atms-V1-ndk",
     owner: "samsung",
     strip: {
@@ -13755,34 +13830,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.camera.atms@1.0",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.mediatek.hardware.camera.atms@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.mediatek.hardware.camera.bgservice-V1-ndk",
     owner: "samsung",
     strip: {
@@ -13795,91 +13842,6 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libbinder_ndk",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.camera.bgservice@1.0",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.mediatek.hardware.camera.bgservice@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.camera.bgservice@1.1",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.mediatek.hardware.camera.bgservice@1.1.so",
-            ],
-            shared_libs: [
-                "vendor.mediatek.hardware.camera.bgservice@1.0",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.camera.ccap@1.0",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.mediatek.hardware.camera.ccap@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -13940,67 +13902,6 @@ cc_prebuilt_library_shared {
                 "libbinder_ndk",
                 "android.hardware.common-V2-ndk",
                 "android.hardware.graphics.common-V7-ndk",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.camera.isphal@1.0",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.mediatek.hardware.camera.isphal@1.0.so",
-            ],
-            shared_libs: [
-                "android.hardware.graphics.common@1.0",
-                "android.hardware.graphics.common@1.1",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.camera.isphal@1.1",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.mediatek.hardware.camera.isphal@1.1.so",
-            ],
-            shared_libs: [
-                "android.hardware.graphics.common@1.0",
-                "android.hardware.graphics.common@1.2",
-                "vendor.mediatek.hardware.camera.isphal@1.0",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -14097,31 +13998,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.camera.uievent-V1-ndk",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.mediatek.hardware.camera.uievent-V1-ndk.so",
-            ],
-            shared_libs: [
-                "libbinder_ndk",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.mediatek.hardware.clientapi-V1-ndk",
     owner: "samsung",
     strip: {
@@ -14188,31 +14064,6 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libutils",
                 "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.mbrain-V6-ndk",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.mediatek.hardware.mbrain-V6-ndk.so",
-            ],
-            shared_libs: [
-                "libbinder_ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -14656,33 +14507,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.videotelephony-V1-ndk",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so",
-            ],
-            shared_libs: [
-                "libbinder_ndk",
-                "android.hardware.common-V2-ndk",
-                "android.hardware.common.fmq-V1-ndk",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.samsung.hardware.gnss-V4-ndk",
     owner: "samsung",
     strip: {
@@ -14915,6 +14739,15 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
+    name: "android.hardware.effect.service-aidl.mediatek.xml",
+    owner: "samsung",
+    src: "proprietary/vendor/etc/vintf/manifest/android.hardware.effect.service-aidl.mediatek.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+prebuilt_etc_xml {
     name: "android.hardware.usb-aidl-service.mediatekv1.0.xml",
     owner: "samsung",
     src: "proprietary/vendor/etc/vintf/manifest/android.hardware.usb-aidl-service.mediatekv1.0.xml",
@@ -14972,24 +14805,6 @@ prebuilt_etc_xml {
     name: "vendor.samsung.hardware.radio.exclude.mediatek.xml",
     owner: "samsung",
     src: "proprietary/vendor/etc/vintf/manifest/vendor.samsung.hardware.radio.exclude.mediatek.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "vendor.samsung.hardware.radio.exclude.slsi.xml",
-    owner: "samsung",
-    src: "proprietary/vendor/etc/vintf/manifest/vendor.samsung.hardware.radio.exclude.slsi.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "vendor.samsung.hardware.radio.exclude_ship.mediatek.xml",
-    owner: "samsung",
-    src: "proprietary/vendor/etc/vintf/manifest/vendor.samsung.hardware.radio.exclude_ship.mediatek.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
@@ -15210,11 +15025,11 @@ cc_prebuilt_binary {
                 "proprietary/vendor/bin/hw/android.hardware.audio.service-aidl.mediatek",
             ],
             shared_libs: [
-                "android.hardware.soundtrigger3-V2-ndk",
-                "android.hardware.audio.core-V2-ndk",
-                "android.hardware.bluetooth.audio-V4-ndk",
-                "android.hardware.audio.core.sounddose-V2-ndk",
-                "android.media.audio.common.types-V3-ndk",
+                "android.hardware.soundtrigger3-V2-ndk_mtk",
+                "android.hardware.audio.core-V2-ndk_mtk",
+                "android.hardware.bluetooth.audio-V4-ndk_mtk",
+                "android.hardware.audio.core.sounddose-V2-ndk_mtk",
+                "android.media.audio.common.types-V3-ndk_mtk",
                 "libalsautilsv2",
                 "libaudioaidlcommon",
                 "libaudioutils",
@@ -15760,7 +15575,7 @@ cc_prebuilt_binary {
                 "proprietary/vendor/bin/mnld",
             ],
             shared_libs: [
-                "libmnl",
+                "libmnl_mtk",
                 "libcurl",
                 "libcutils",
                 "libnvram",

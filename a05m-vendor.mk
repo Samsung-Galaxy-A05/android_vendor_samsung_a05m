@@ -1421,8 +1421,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     AVCSecureVdecCA \
     VP9SecureVdecCA \
+    android.hardware.audio.common-V3-ndk_mtk \
+    android.hardware.audio.core-V2-ndk_mtk \
     android.hardware.audio.core-impl-mediatek \
+    android.hardware.audio.core.sounddose-V2-ndk_mtk \
+    android.hardware.audio.effect-V2-ndk_mtk \
+    android.hardware.bluetooth.audio-V4-ndk_mtk \
     android.hardware.bluetooth.audio-impl-mediatek \
+    android.hardware.soundtrigger3-V2-ndk_mtk \
+    android.media.audio.common.types-V3-ndk_mtk \
+    android.media.soundtrigger.types-V2-ndk_mtk \
     arm.graphics-V5-ndk \
     arm.mali.platform-V2-ndk \
     camera.device@3.2-impl \
@@ -1591,7 +1599,6 @@ PRODUCT_PACKAGES += \
     libcameracustom.eis \
     libcameracustom.plugin \
     libcameracustom \
-    libcarrierconfig \
     libccci_util \
     libchromanr \
     libcodec2_fsr \
@@ -1606,7 +1613,6 @@ PRODUCT_PACKAGES += \
     libconnfem \
     libcustom_nvram \
     libcvsd_mtk \
-    libdapparamstorage \
     libdeccfg \
     libeffecthal.base \
     libengmode_client \
@@ -1663,7 +1669,7 @@ PRODUCT_PACKAGES += \
     libminiui \
     libmipc \
     libmmprofile \
-    libmnl \
+    libmnl_mtk \
     libmp4enc_sa.ca7 \
     libmsbc_mtk \
     libmsnr \
@@ -1858,25 +1864,16 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.audio-V1-ndk \
     vendor.mediatek.hardware.audio@6.1 \
     vendor.mediatek.hardware.bluetooth.audio-V1-ndk \
-    vendor.mediatek.hardware.camera.aovservice-V2-ndk \
     vendor.mediatek.hardware.camera.atms-V1-ndk \
-    vendor.mediatek.hardware.camera.atms@1.0 \
     vendor.mediatek.hardware.camera.bgservice-V1-ndk \
-    vendor.mediatek.hardware.camera.bgservice@1.0 \
-    vendor.mediatek.hardware.camera.bgservice@1.1 \
-    vendor.mediatek.hardware.camera.ccap@1.0 \
     vendor.mediatek.hardware.camera.frhandler@1.0 \
     vendor.mediatek.hardware.camera.isphal-V1-ndk \
-    vendor.mediatek.hardware.camera.isphal@1.0 \
-    vendor.mediatek.hardware.camera.isphal@1.1 \
     vendor.mediatek.hardware.camera.postproc-V1-ndk \
     vendor.mediatek.hardware.camera.postproc@1.0 \
     vendor.mediatek.hardware.camera.security@1.0 \
-    vendor.mediatek.hardware.camera.uievent-V1-ndk \
     vendor.mediatek.hardware.clientapi-V1-ndk \
     vendor.mediatek.hardware.composer_ext-V1-ndk \
     vendor.mediatek.hardware.composer_ext@1.0 \
-    vendor.mediatek.hardware.mbrain-V6-ndk \
     vendor.mediatek.hardware.mdmonitor-V1-ndk \
     vendor.mediatek.hardware.mdmonitor@1.0 \
     vendor.mediatek.hardware.mmagent-V1-ndk \
@@ -1893,7 +1890,6 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.pq_aidl-V2-ndk \
     vendor.mediatek.hardware.rcs-V1-ndk \
     vendor.mediatek.hardware.rcs@2.0 \
-    vendor.mediatek.hardware.videotelephony-V1-ndk \
     vendor.samsung.hardware.gnss-V4-ndk \
     vendor.samsung.hardware.keymint-V1-ndk \
     vendor.samsung.hardware.radio-V1-ndk \
@@ -1905,6 +1901,7 @@ PRODUCT_PACKAGES += \
     com.google.android.widevine.nonupdatable \
     CommandService.xml \
     android.hardware.audio.service-aidl.mediatek.xml \
+    android.hardware.effect.service-aidl.mediatek.xml \
     android.hardware.usb-aidl-service.mediatekv1.0.xml \
     bluetooth_audio_mtk.xml \
     manifest_allocator.xml \
@@ -1912,8 +1909,6 @@ PRODUCT_PACKAGES += \
     mapper.mediatek.xml \
     media_c2_mtk.xml \
     vendor.samsung.hardware.radio.exclude.mediatek.xml \
-    vendor.samsung.hardware.radio.exclude.slsi.xml \
-    vendor.samsung.hardware.radio.exclude_ship.mediatek.xml \
     vendor.samsung.hardware.radio_manifest_2_33.xml \
     vendor.samsung.hardware.sehradio_manifest_2_33.xml \
     ccci_mdinit \
