@@ -1630,7 +1630,7 @@ PRODUCT_PACKAGES += \
     libfile_op \
     libfloatingfeature \
     libforkexecwrap \
-    libformatter \
+    libformatter_mtk \
     libfsmaudio \
     libged \
     libgpu_aux \

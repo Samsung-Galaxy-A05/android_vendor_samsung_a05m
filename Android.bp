@@ -6573,7 +6573,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libformatter",
+    name: "libformatter_mtk",
     owner: "samsung",
     strip: {
         none: true,
@@ -6581,7 +6581,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/libformatter.so",
+                "proprietary/vendor/lib64/libformatter_mtk.so",
             ],
             shared_libs: [
                 "libion_mtk",
