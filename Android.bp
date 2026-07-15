@@ -1258,34 +1258,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "thermal_hal",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/hw/thermal_hal.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libhardware",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    relative_install_path: "hw",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.mediatek.hardware.audio-impl",
     owner: "samsung",
     strip: {
@@ -3300,10 +3272,22 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib64/libaudio_aidl_conversion_common_ndk_prebuilt.so",
             ],
+            shared_libs: [
+                "android.media.audio.common.types-V3-ndk_mtk",
+                "android.hardware.audio.common-V3-ndk_mtk",
+                "liblog",
+                "libstagefright_foundation",
+                "libutils",
+                "libbase",
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -6573,7 +6557,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libformatter",
+    name: "libformatter_mtk",
     owner: "samsung",
     strip: {
         none: true,
@@ -6581,7 +6565,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/libformatter.so",
+                "proprietary/vendor/lib64/libformatter_mtk.so",
             ],
             shared_libs: [
                 "libion_mtk",
@@ -7817,32 +7801,6 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libmsnr.so",
             ],
             shared_libs: [
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmtcloader",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libmtcloader.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
                 "libc++",
                 "libc",
                 "libm",
@@ -12112,33 +12070,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libthermalalgo",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libthermalalgo.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libthha",
     owner: "samsung",
     strip: {
@@ -15748,85 +15679,6 @@ cc_prebuilt_binary {
                 "libutils",
                 "liblog",
                 "libsemnativecarrierfeature",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "thermal",
-    owner: "samsung",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/thermal",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libifcutils_mtk",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "thermal_manager",
-    owner: "samsung",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/thermal_manager",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "thermalloadalgod",
-    owner: "samsung",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/thermalloadalgod",
-            ],
-            shared_libs: [
-                "liblog",
-                "libutils",
                 "libc++",
                 "libc",
                 "libm",

@@ -6,13 +6,6 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/samsung/a05m
 
 PRODUCT_COPY_FILES += \
-    vendor/samsung/a05m/proprietary/vendor/etc/.tp/.ht120.mtc:$(TARGET_COPY_OUT_VENDOR)/etc/.tp/.ht120.mtc \
-    vendor/samsung/a05m/proprietary/vendor/etc/.tp/.thermal_policy_00:$(TARGET_COPY_OUT_VENDOR)/etc/.tp/.thermal_policy_00 \
-    vendor/samsung/a05m/proprietary/vendor/etc/.tp/.thermal_policy_03:$(TARGET_COPY_OUT_VENDOR)/etc/.tp/.thermal_policy_03 \
-    vendor/samsung/a05m/proprietary/vendor/etc/.tp/.thermal_policy_05:$(TARGET_COPY_OUT_VENDOR)/etc/.tp/.thermal_policy_05 \
-    vendor/samsung/a05m/proprietary/vendor/etc/.tp/.thermal_policy_08:$(TARGET_COPY_OUT_VENDOR)/etc/.tp/.thermal_policy_08 \
-    vendor/samsung/a05m/proprietary/vendor/etc/.tp/thermal.conf:$(TARGET_COPY_OUT_VENDOR)/etc/.tp/thermal.conf \
-    vendor/samsung/a05m/proprietary/vendor/etc/.tp/thermal.off.conf:$(TARGET_COPY_OUT_VENDOR)/etc/.tp/thermal.off.conf \
     vendor/samsung/a05m/proprietary/vendor/etc/VideoLog_dynamic.ds:$(TARGET_COPY_OUT_VENDOR)/etc/VideoLog_dynamic.ds \
     vendor/samsung/a05m/proprietary/vendor/etc/apdb/APDB_MT6768_S01__W2543:$(TARGET_COPY_OUT_VENDOR)/etc/apdb/APDB_MT6768_S01__W2543 \
     vendor/samsung/a05m/proprietary/vendor/etc/apdb/APDB_MT6768_S01__W2543_ENUM:$(TARGET_COPY_OUT_VENDOR)/etc/apdb/APDB_MT6768_S01__W2543_ENUM \
@@ -1331,9 +1324,6 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/a05m/proprietary/vendor/etc/init/init.fmradio_drv.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.fmradio_drv.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/init.gps.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.gps.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/init.ss_cccimdinit.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.ss_cccimdinit.rc \
-    vendor/samsung/a05m/proprietary/vendor/etc/init/init.thermal.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.thermal.rc \
-    vendor/samsung/a05m/proprietary/vendor/etc/init/init.thermal_manager.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.thermal_manager.rc \
-    vendor/samsung/a05m/proprietary/vendor/etc/init/init.thermalloadalgod.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.thermalloadalgod.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/init.vendor.onebinary.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.onebinary.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/init.vendor.rilcommon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.rilcommon.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/init.wlan_drv.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.wlan_drv.rc \
@@ -1378,7 +1368,6 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/a05m/proprietary/vendor/etc/preset_voip.bin:$(TARGET_COPY_OUT_VENDOR)/etc/preset_voip.bin \
     vendor/samsung/a05m/proprietary/vendor/etc/smsdbvisitor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/smsdbvisitor.xml \
     vendor/samsung/a05m/proprietary/vendor/etc/special_pws_channel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/special_pws_channel.xml \
-    vendor/samsung/a05m/proprietary/vendor/etc/throttle.sh:$(TARGET_COPY_OUT_VENDOR)/etc/throttle.sh \
     vendor/samsung/a05m/proprietary/vendor/etc/virtual-spn-conf-by-efgid1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/virtual-spn-conf-by-efgid1.xml \
     vendor/samsung/a05m/proprietary/vendor/etc/virtual-spn-conf-by-efpnn.xml:$(TARGET_COPY_OUT_VENDOR)/etc/virtual-spn-conf-by-efpnn.xml \
     vendor/samsung/a05m/proprietary/vendor/etc/virtual-spn-conf-by-efspn.xml:$(TARGET_COPY_OUT_VENDOR)/etc/virtual-spn-conf-by-efspn.xml \
@@ -1457,7 +1446,6 @@ PRODUCT_PACKAGES += \
     mapper.mediatek \
     sensors.mt6768 \
     sound_trigger.primary.default \
-    thermal_hal \
     vendor.mediatek.hardware.audio-impl \
     vendor.mediatek.hardware.bluetooth.audio@2.1-impl \
     vendor.mediatek.hardware.camera.atms_aidl@1.0-impl \
@@ -1630,7 +1618,7 @@ PRODUCT_PACKAGES += \
     libfile_op \
     libfloatingfeature \
     libforkexecwrap \
-    libformatter \
+    libformatter_mtk \
     libfsmaudio \
     libged \
     libgpu_aux \
@@ -1673,7 +1661,6 @@ PRODUCT_PACKAGES += \
     libmp4enc_sa.ca7 \
     libmsbc_mtk \
     libmsnr \
-    libmtcloader \
     libmtkcam.atmseventmgr \
     libmtkcam.debugwrapper \
     libmtkcam.eventcallback \
@@ -1800,7 +1787,6 @@ PRODUCT_PACKAGES += \
     libsysenv \
     libteecl \
     libtensorflowlite \
-    libthermalalgo \
     libthha \
     libtrm \
     libudf \
@@ -1941,9 +1927,6 @@ PRODUCT_PACKAGES += \
     nvram_daemon \
     rcs_volte_stack \
     secril_config_svc \
-    thermal \
-    thermal_manager \
-    thermalloadalgod \
     trusty-ut-ctrl \
     tzdaemon \
     tzts_daemon \
