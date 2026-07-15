@@ -1895,8 +1895,6 @@ PRODUCT_PACKAGES += \
     mapper.mediatek.xml \
     media_c2_mtk.xml \
     vendor.samsung.hardware.radio.exclude.mediatek.xml \
-    vendor.samsung.hardware.radio.exclude.slsi.xml \
-    vendor.samsung.hardware.radio.exclude_ship.mediatek.xml \
     vendor.samsung.hardware.radio_manifest_2_33.xml \
     vendor.samsung.hardware.sehradio_manifest_2_33.xml \
     ccci_mdinit \
