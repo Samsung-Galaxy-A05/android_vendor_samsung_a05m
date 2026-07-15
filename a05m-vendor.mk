@@ -1328,8 +1328,6 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/a05m/proprietary/vendor/etc/init/init.vendor.rilcommon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.rilcommon.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/init.wlan_drv.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.wlan_drv.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/init.wmt_drv.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.wmt_drv.rc \
-    vendor/samsung/a05m/proprietary/vendor/etc/init/netdagent.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/netdagent.rc \
-    vendor/samsung/a05m/proprietary/vendor/etc/init/networksetting.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/networksetting.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/nvram_daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/nvram_daemon.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/teegris.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/teegris.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/v3avpud-64b.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/v3avpud-64b.rc \
@@ -1800,9 +1798,7 @@ PRODUCT_PACKAGES += \
     libvp9dec_sa.ca7 \
     libvpu5 \
     libvpudv3a_vcodec \
-    libwapi \
     libwifinvramdata \
-    libwpa_client \
     libwpfa \
     libdpframework \
     libmmagent \
@@ -1885,7 +1881,6 @@ PRODUCT_PACKAGES += \
     vendor.samsung.hardware.radio.messaging-V1-ndk \
     vendor.samsung.hardware.radio.sim-V1-ndk \
     com.google.android.widevine.nonupdatable \
-    CommandService.xml \
     android.hardware.audio.service-aidl.mediatek.xml \
     android.hardware.effect.service-aidl.mediatek.xml \
     android.hardware.usb-aidl-service.mediatekv1.0.xml \
@@ -1923,7 +1918,6 @@ PRODUCT_PACKAGES += \
     lib3a.ccu.pm \
     mnld \
     mtk_agpsd \
-    netdagent \
     nvram_daemon \
     rcs_volte_stack \
     secril_config_svc \

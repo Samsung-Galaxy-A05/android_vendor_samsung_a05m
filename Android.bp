@@ -12421,33 +12421,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libwapi",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libwapi.so",
-            ],
-            shared_libs: [
-                "libkeystore-wifi-hidl",
-                "libcrypto",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libwifinvramdata",
     owner: "samsung",
     strip: {
@@ -12462,32 +12435,6 @@ cc_prebuilt_library_shared {
                 "libdl",
                 "libc",
                 "libm",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libwpa_client",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libwpa_client.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
             ],
         },
     },
@@ -14652,15 +14599,6 @@ prebuilt_apex {
 }
 
 prebuilt_etc_xml {
-    name: "CommandService.xml",
-    owner: "samsung",
-    src: "proprietary/vendor/etc/vintf/manifest/CommandService.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
     name: "android.hardware.audio.service-aidl.mediatek.xml",
     owner: "samsung",
     src: "proprietary/vendor/etc/vintf/manifest/android.hardware.audio.service-aidl.mediatek.xml",
@@ -15557,38 +15495,6 @@ cc_prebuilt_binary {
                 "libcrypto",
                 "libexpat",
                 "libssl",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "netdagent",
-    owner: "samsung",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/netdagent",
-            ],
-            shared_libs: [
-                "libbase",
-                "libcutils",
-                "liblog",
-                "libforkexecwrap",
-                "libutils",
-                "libifcutils_mtk",
-                "libbinder_ndk",
-                "vendor.mediatek.hardware.netdagent-V1-ndk",
                 "libc++",
                 "libc",
                 "libm",
