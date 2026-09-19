@@ -1314,7 +1314,6 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/a05m/proprietary/vendor/etc/init/android.hardware.security.skeymint-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.security.skeymint-service.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/android.hardware.usb-aidl-service.mediatekv1.0.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.usb-aidl-service.mediatekv1.0.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/camerahalserver.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/camerahalserver.rc \
-    vendor/samsung/a05m/proprietary/vendor/etc/init/chipinfo_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/chipinfo_init.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/factorybsp_service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/factorybsp_service.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/fuelgauged_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/fuelgauged_init.rc \
     vendor/samsung/a05m/proprietary/vendor/etc/init/fuelgauged_nvram_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/fuelgauged_nvram_init.rc \
@@ -1896,7 +1895,6 @@ PRODUCT_PACKAGES += \
     ccci_rpcd \
     check_keybox \
     check_keymaster \
-    chipinfo \
     create_factory_efs_file \
     fuelgauged \
     fuelgauged_nvram \

@@ -6,7 +6,6 @@ soong_namespace {
     imports: [
         "device/samsung/a05m",
         "hardware/mediatek",
-        "hardware/mediatek/libaedv",
         "hardware/mediatek/libmtkperf_client",
         "hardware/samsung",
     ],
@@ -14811,14 +14810,6 @@ cc_prebuilt_binary {
         none: true,
     },
     prefer: true,
-    soc_specific: true,
-}
-
-sh_binary {
-    name: "chipinfo",
-    owner: "samsung",
-    src: "proprietary/vendor/bin/chipinfo",
-    filename: "chipinfo",
     soc_specific: true,
 }
 
