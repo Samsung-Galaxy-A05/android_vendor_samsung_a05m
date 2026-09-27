@@ -1642,8 +1642,6 @@ PRODUCT_PACKAGES += \
     libimageio_plat_drv \
     libimageio_plat_pipe \
     libimgsensorca \
-    libion_mtk \
-    libion_ulit \
     libipsec_ims_shr \
     libispcameraca \
     libjpeg-alpha-oal_vendor \
